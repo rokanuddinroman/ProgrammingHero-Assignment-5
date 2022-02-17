@@ -15,7 +15,7 @@
     <main class="container">
         <h1 class="text-center my-4">Money Management Dashboard</h1>
         <div class="row g-4">
-            <div class="col-6">
+            <div class="col-6 col-md-12 col-sm-12">
                 <div class="intro-img p-5 rounded text-white">
                     <h2 class="">Welcome to Money Management Dashboard</h2>
                     <p style="margin-bottom: 100px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure sunt
@@ -26,31 +26,31 @@
                     <!-- <img class="w-100" src="images/bg.jpg" alt=""> -->
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 col-md-12 col-sm-12">
                 <div style="background-color: #F8F8F8;" class="rounded p-5">
                     <h4 class="text-center">Income</h4>
                     <div class="mt-4 text-center">
                         <span class="pe-2">Income:</span>
-                        <input type="text" class="income-field input-box">
+                        <input id="incomeField" type="text" class="input-box">
                     </div>
                     <h4 class="text-center my-4">Expenses</h4>
                     <div class="text-center">
                         <div>
                             <span class="pe-2">Food:</span>
-                            <input type="text" class="food-field"><br>
+                            <input id="foodField" type="text" class=""><br>
                         </div>
                         <div class="my-4">
                             <span class="pe-2">Rent:</span>
-                            <input type="text" class="rent-field"><br>
+                            <input id="rentField" type="text" class=""><br>
                         </div>
                         <div>
-                            <span class="pe-2">Rent:</span>
-                            <input type="text" class="rent-field"><br>
+                            <span class="pe-2">Clothes:</span>
+                            <input id="clothesField" type="text" class=""><br>
                         </div>
-                        <button class="calculate-btn my-4 btn btn-primary">Calculate</button>
+                        <button id="calculate-btn" class="my-4 btn btn-primary">Calculate</button>
                     </div>
-                    <h4 class="text-center my-4">Total Expenses: 00</h4>
-                    <h4 class="text-center my-4">Balance: 00</h4>
+                    <h4 class="text-center my-4">Total Expenses: <span id="myExpenses">00</span></h4>
+                    <h4 class="text-center my-4">Balance: <span id="myBalance">00</span></h4>
                     <div class="">
                         <span class="pe-2">Save:</span>
                         <input type="text" class="save-field"> <span class="px-4">%</span><button
