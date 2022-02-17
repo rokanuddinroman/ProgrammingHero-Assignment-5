@@ -22,8 +22,8 @@
                         <li>Enter your Income and your Costs.</li>
                         <li>Don't Enter Negetive Value.</li>
                         <li>Carefull about your Income and Expenses. Don't Expense more than your Income.</li>
-                        <li></li>
-                        <li>Saving is a Good Habit. Try Saving 10% of your Income.</li>
+                        <li>Enter Only Numbers.</li>
+                        <li>Saving is a Good Habit. Try Saving atleast 10% of your Income.</li>
                     </ul>
 
                     <!-- <img class="w-100" src="images/bg.jpg" alt=""> -->
@@ -36,7 +36,9 @@
                         <div id="food-alert" class="alert alert-danger">Enter your Food Cost</div>
                         <div id="rent-alert" class="alert alert-danger">Enter your Rent Cost</div>
                         <div id="clothes-alert" class="alert alert-danger">Enter your Clothes Cost</div>
-                        <div class="alert alert-danger"></div>
+                        <div id="positive-alert" class="alert alert-danger">Enter Only Positive Numbers</div>
+                        <div id="limit-alert" class="alert alert-danger">Your Expenses Are are Higher then Your Income
+                        </div>
                     </div>
                     <h4 class="text-center">Income</h4>
                     <div class="mt-4 text-center">
@@ -62,6 +64,11 @@
                     <h4 class="text-center my-4">Total Expenses: <span id="myExpenses">00</span></h4>
                     <h4 class="text-center my-4">Balance: <span id="myBalance">00</span></h4>
                     <div class="">
+                        <div class="text-center my-2">
+                            <div id="saveLess-alert" class="alert alert-danger">Save Little Less</div>
+                            <div id="positive2-alert" class="alert alert-danger">Enter Positive Numbers</div>
+                            <div id="saving-alert" class="alert alert-danger">Enter Your Saving</div>
+                        </div>
                         <span class="pe-2">Save:</span>
                         <input placeholder="Enter your Saving" id="saveField" type="number" class=""> <span
                             class="px-2">%</span>

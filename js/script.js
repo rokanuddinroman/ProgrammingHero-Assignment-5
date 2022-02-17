@@ -41,32 +41,75 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
         document.getElementById('rent-alert').style.display = "none";
         document.getElementById('food-alert').style.display = "none";
         document.getElementById('income-alert').style.display = "none";
+        document.getElementById('positive-alert').style.display = "none";
+        document.getElementById('limit-alert').style.display = "none";
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
     }
     if (incomeText == "") {
         document.getElementById('income-alert').style.display = "block";
+        document.getElementById('positive-alert').style.display = "none";
+        document.getElementById('limit-alert').style.display = "none";
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
     }
     else if (foodText == "") {
         document.getElementById('food-alert').style.display = "block";
         document.getElementById('income-alert').style.display = "none";
+        document.getElementById('positive-alert').style.display = "none";
+        document.getElementById('limit-alert').style.display = "none";
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
     }
     else if (rentText == "") {
         document.getElementById('rent-alert').style.display = "block";
         document.getElementById('food-alert').style.display = "none";
         document.getElementById('income-alert').style.display = "none";
+        document.getElementById('positive-alert').style.display = "none";
+        document.getElementById('limit-alert').style.display = "none";
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
     }
     else if (clothesText == "") {
         document.getElementById('clothes-alert').style.display = "block";
         document.getElementById('rent-alert').style.display = "none";
         document.getElementById('food-alert').style.display = "none";
         document.getElementById('income-alert').style.display = "none";
+        document.getElementById('positive-alert').style.display = "none";
+        document.getElementById('limit-alert').style.display = "none";
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
     }
 
 
     if (incomeTotal < 0 || foodTotal < 0 || rentTotal < 0 || clothesTotal < 0) {
-        alert('Enter Only Positive');
+        document.getElementById('positive-alert').style.display = "block";
+        document.getElementById('limit-alert').style.display = "none";
+        document.getElementById('clothes-alert').style.display = "none";
+        document.getElementById('rent-alert').style.display = "none";
+        document.getElementById('food-alert').style.display = "none";
+        document.getElementById('income-alert').style.display = "none";
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
+        previousExpenses.innerText = 0;
+        previousBalance.innerText = 0;
     }
     if (totalExpenses > incomeTotal) {
-        alert('Your Expenses Are are Higher then Your Income');
+        document.getElementById('limit-alert').style.display = "block";
+        document.getElementById('positive-alert').style.display = "none";
+        document.getElementById('clothes-alert').style.display = "none";
+        document.getElementById('rent-alert').style.display = "none";
+        document.getElementById('food-alert').style.display = "none";
+        document.getElementById('income-alert').style.display = "none";
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
     }
 
 
@@ -104,15 +147,32 @@ document.getElementById('save-btn').addEventListener('click', function () {
     if (totalRemainingBalance > 0) {
         mySave.innerText = totalSave;
         remainingBalance.innerText = totalRemainingBalance;
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
     }
     if (savePercentageText == "") {
-        alert('Enter Your Saving');
+        document.getElementById('saving-alert').style.display = "block";
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('positive2-alert').style.display = "none";
     }
     if (savePercentage <= 0) {
-        alert('Enter Positive Numbers');
+        document.getElementById('positive2-alert').style.display = "block";
+        mySave.innerText = 0;
+        remainingBalance.innerText = 0;
+        document.getElementById('saveLess-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
+    }
+    if (savePercentage > 0) {
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
     }
     if (totalRemainingBalance < 0) {
-        alert('Save Little Less');
+        document.getElementById('saveLess-alert').style.display = "block";
+        document.getElementById('positive2-alert').style.display = "none";
+        document.getElementById('saving-alert').style.display = "none";
+        mySave.innerText = 0;
+        remainingBalance.innerText = 0;
     }
 
 });
