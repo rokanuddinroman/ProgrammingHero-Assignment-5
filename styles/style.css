@@ -7,9 +7,10 @@ body{
 
 
 input{
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid gray;
     background-color: #DCDCDC;
+    padding: 8px 12px;
 }
 
 .btn-main{

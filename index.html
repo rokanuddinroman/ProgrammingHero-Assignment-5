@@ -15,7 +15,7 @@
     <main class="container">
         <h1 class="text-center my-4">Money Management Dashboard</h1>
         <div class="row g-4">
-            <div class="col-6 col-md-12 col-sm-12">
+            <div class="col-6 col-md-12 col-sm-12 col-lg-6">
                 <div class="intro-img p-5 rounded text-white">
                     <h2 class="">Welcome to Money Management Dashboard</h2>
                     <p style="margin-bottom: 100px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure sunt
@@ -26,26 +26,26 @@
                     <!-- <img class="w-100" src="images/bg.jpg" alt=""> -->
                 </div>
             </div>
-            <div class="col-6 col-md-12 col-sm-12">
+            <div class="col-6 col-md-12 col-lg-6 col-sm-12">
                 <div style="background-color: #F8F8F8;" class="rounded p-5">
                     <h4 class="text-center">Income</h4>
                     <div class="mt-4 text-center">
                         <span class="pe-2">Income:</span>
-                        <input id="incomeField" type="text" class="input-box">
+                        <input placeholder="Enter your Income" id="incomeField" type="text" class="input-box">
                     </div>
                     <h4 class="text-center my-4">Expenses</h4>
                     <div class="text-center">
                         <div>
                             <span class="pe-2">Food:</span>
-                            <input id="foodField" type="text" class=""><br>
+                            <input placeholder="Enter your Food Cost" id="foodField" type="text" class="ms-4"><br>
                         </div>
                         <div class="my-4">
                             <span class="pe-2">Rent:</span>
-                            <input id="rentField" type="text" class=""><br>
+                            <input placeholder="Enter your Rent Cost" id="rentField" type="text" class="ms-4"><br>
                         </div>
                         <div>
                             <span class="pe-2">Clothes:</span>
-                            <input id="clothesField" type="text" class=""><br>
+                            <input placeholder="Enter your Clothes Cost" id="clothesField" type="text" class=""><br>
                         </div>
                         <button id="calculate-btn" class="my-4 btn btn-primary">Calculate</button>
                     </div>
@@ -53,10 +53,11 @@
                     <h4 class="text-center my-4">Balance: <span id="myBalance">00</span></h4>
                     <div class="">
                         <span class="pe-2">Save:</span>
-                        <input type="text" class="save-field"> <span class="px-4">%</span><button
-                            class="calculate-btn my-4 btn btn-primary">Save</button>
-                        <h4 class="text-center my-4">Saving Amount: 2000</h4>
-                        <h4 class="text-center mt-4">Remaining Balance: 2500 </h4>
+                        <input placeholder="Enter your Saving" id="saveField" type="text" class=""> <span
+                            class="px-4">%</span>
+                        <button id="save-btn" class="calculate-btn my-4 btn btn-primary">Save</button>
+                        <h4 class="text-center my-4">Saving Amount: <span id="mySave">00</span></h4>
+                        <h4 class="text-center mt-4">Remaining Balance: <span id="remainingBalance">00</span></h4>
                     </div>
 
                 </div>
