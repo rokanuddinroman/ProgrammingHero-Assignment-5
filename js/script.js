@@ -37,23 +37,33 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     if (totalBalance >= 0 && totalExpenses >= 0) {
         previousExpenses.innerText = totalExpenses;
         previousBalance.innerText = totalBalance;
+        document.getElementById('clothes-alert').style.display = "none";
+        document.getElementById('rent-alert').style.display = "none";
+        document.getElementById('food-alert').style.display = "none";
+        document.getElementById('income-alert').style.display = "none";
     }
     if (incomeText == "") {
-        alert('Help Income');
+        document.getElementById('income-alert').style.display = "block";
     }
     else if (foodText == "") {
-        alert('Food Rent');
+        document.getElementById('food-alert').style.display = "block";
+        document.getElementById('income-alert').style.display = "none";
     }
     else if (rentText == "") {
-        alert('Help Rent');
+        document.getElementById('rent-alert').style.display = "block";
+        document.getElementById('food-alert').style.display = "none";
+        document.getElementById('income-alert').style.display = "none";
     }
     else if (clothesText == "") {
-        alert('Clothes Rent');
+        document.getElementById('clothes-alert').style.display = "block";
+        document.getElementById('rent-alert').style.display = "none";
+        document.getElementById('food-alert').style.display = "none";
+        document.getElementById('income-alert').style.display = "none";
     }
 
 
     if (incomeTotal < 0 || foodTotal < 0 || rentTotal < 0 || clothesTotal < 0) {
-        alert('Enter Valid Numbers');
+        alert('Enter Only Positive');
     }
     if (totalExpenses > incomeTotal) {
         alert('Your Expenses Are are Higher then Your Income');
@@ -94,14 +104,15 @@ document.getElementById('save-btn').addEventListener('click', function () {
     if (totalRemainingBalance > 0) {
         mySave.innerText = totalSave;
         remainingBalance.innerText = totalRemainingBalance;
-    } if (totalRemainingBalance <= 0) {
-        alert('Save Little More')
     }
     if (savePercentageText == "") {
         alert('Enter Your Saving');
     }
-    if (_.isString(savePercentageText)) {
-        alert('Enter Number')
+    if (savePercentage <= 0) {
+        alert('Enter Positive Numbers');
+    }
+    if (totalRemainingBalance < 0) {
+        alert('Save Little Less');
     }
 
 });

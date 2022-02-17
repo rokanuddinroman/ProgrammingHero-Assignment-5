@@ -3,7 +3,9 @@
 body{
     font-family: 'Poppins', sans-serif !important;
 }
-
+.alert{
+    display:none;
+}
 
 
 input{
