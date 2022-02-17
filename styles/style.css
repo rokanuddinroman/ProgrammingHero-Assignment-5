@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+
+input{
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: #DCDCDC;
+}
+
+.btn-main{
+    background-color: #59A5FF;
+}
+
+.intro-img{
+    background-color: #00175b;
+    
+    /* background-repeat: no-repeat; */
+    /* background-color: aliceblue; */
+}
