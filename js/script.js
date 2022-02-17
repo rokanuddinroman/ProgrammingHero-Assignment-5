@@ -59,38 +59,6 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
         alert('Your Expenses Are are Higher then Your Income');
     }
 
-    // string error
-    // if (typeof incomeText === 'string') {
-    //     alert('Help String Income');
-    // }
-    // else if (typeof foodText === 'string') {
-    //     alert('Food Rent');
-    // }
-    // else if (typeof rentText === 'string') {
-    //     alert('Help Rent');
-    // }
-    // else if (typeof clothesText === 'string') {
-    //     alert('Clothes Rent');
-    // }
-    // if (totalBalance == NaN) {
-    //     alert('Enter Valid Numbers');
-    // }
-
-    // if (typeof totalBalance != 'number' && typeof totalExpenses != 'number') {
-    //     alert('Enter Valid2 Numbers');
-    // }
-
-
-    // else if (typeof totalBalance == 'number' && typeof totalExpenses == 'number') {
-    //     previousExpenses.innerText = totalExpenses;
-    //     previousBalance.innerText = totalBalance;
-    // }
-
-
-    // else {
-
-    // }
-
 
 });
 
@@ -107,13 +75,6 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const rentTotal = parseFloat(rentText);
     const clothesText = getInputFromField('clothesField');
     const clothesTotal = parseFloat(clothesText);
-    // Expenses
-    // const previousExpensesValue = putInputToResult('myExpenses');
-    // let previousExpensesText = previousExpenses.innerText;
-    // const previousExpensesValue = parseFloat(previousExpensesText);
-    // const newExpenses = foodTotal + rentTotal + clothesTotal;
-    // const totalExpenses = newExpenses + previousExpensesValue;
-    // const totalExpenses = previousExpensesValue;
 
     // Old 
     const totalExpenses = foodTotal + rentTotal + clothesTotal;
