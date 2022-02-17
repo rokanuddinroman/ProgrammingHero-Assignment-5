@@ -12,14 +12,23 @@ input{
     background-color: #DCDCDC;
     padding: 8px 12px;
 }
-
-.btn-main{
-    background-color: #59A5FF;
+.btn{
+    padding: .375rem 1.8rem !important;
+}
+.btn-primary{
+    background-color: #59A5FF !important;
+    border-color: #59A5FF !important;
 }
 
 .intro-img{
+    background-image: url(../images/watermark.svg);
+    background-repeat: no-repeat;
+    background-position-x: 100%;
     background-color: #00175b;
-    
+    height: 500px;
     /* background-repeat: no-repeat; */
     /* background-color: aliceblue; */
+}
+ul{
+    padding-inline-start: 20px !important;
 }

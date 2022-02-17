@@ -1,44 +1,146 @@
 function getInputFromField(inputId) {
     const inputFieldInput = document.getElementById(inputId);
     const inputFieldText = inputFieldInput.value;
-    const inputFieldValue = parseFloat(inputFieldText);
-    return inputFieldValue;
+    return inputFieldText;
+
 };
 
 function putInputToResult(inputId) {
-    const resultInput = document.getElementById(inputId);
-    // const resultText = resultInput.innerText;
-    return resultInput;
+    const placement = document.getElementById(inputId);
+    return placement;
 };
 
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
-    const incomeTotal = getInputFromField('incomeField');
-    const foodTotal = getInputFromField('foodField')
-    const rentTotal = getInputFromField('rentField')
-    const clothesTotal = getInputFromField('clothesField')
-    const myExpenses = putInputToResult('myExpenses');
-    const totalExpenses = foodTotal + rentTotal + clothesTotal;
-    myExpenses.innerText = totalExpenses;
-    const myBalance = putInputToResult('myBalance')
+    const incomeText = getInputFromField('incomeField');
+    const incomeTotal = parseFloat(incomeText);
+    const foodText = getInputFromField('foodField');
+    const foodTotal = parseFloat(foodText);
+    const rentText = getInputFromField('rentField');
+    const rentTotal = parseFloat(rentText);
+    const clothesText = getInputFromField('clothesField');
+    const clothesTotal = parseFloat(clothesText);
+    // Expenses 
+    const previousExpenses = putInputToResult('myExpenses');
+    let previousExpensesText = previousExpenses.innerText;
+    // const previousExpensesValue = parseFloat(previousExpensesText);
+    const newExpenses = foodTotal + rentTotal + clothesTotal;
+    const totalExpenses = newExpenses;
+    // const totalExpenses = newExpenses + previousExpensesValue;
+    // Balance 
+    const previousBalance = putInputToResult('myBalance');
+    // let previousBalanceText = previousBalance.innerText;
+    // const previousBalanceValue = parseFloat(previousBalanceText);
     const totalBalance = incomeTotal - totalExpenses;
-    myBalance.innerText = totalBalance;
+
+
+    if (totalBalance >= 0 && totalExpenses >= 0) {
+        previousExpenses.innerText = totalExpenses;
+        previousBalance.innerText = totalBalance;
+    }
+    if (incomeText == "") {
+        alert('Help Income');
+    }
+    else if (foodText == "") {
+        alert('Food Rent');
+    }
+    else if (rentText == "") {
+        alert('Help Rent');
+    }
+    else if (clothesText == "") {
+        alert('Clothes Rent');
+    }
+
+
+    if (incomeTotal < 0 || foodTotal < 0 || rentTotal < 0 || clothesTotal < 0) {
+        alert('Enter Valid Numbers');
+    }
+    if (totalExpenses > incomeTotal) {
+        alert('Your Expenses Are are Higher then Your Income');
+    }
+
+    // string error
+    // if (typeof incomeText === 'string') {
+    //     alert('Help String Income');
+    // }
+    // else if (typeof foodText === 'string') {
+    //     alert('Food Rent');
+    // }
+    // else if (typeof rentText === 'string') {
+    //     alert('Help Rent');
+    // }
+    // else if (typeof clothesText === 'string') {
+    //     alert('Clothes Rent');
+    // }
+    // if (totalBalance == NaN) {
+    //     alert('Enter Valid Numbers');
+    // }
+
+    // if (typeof totalBalance != 'number' && typeof totalExpenses != 'number') {
+    //     alert('Enter Valid2 Numbers');
+    // }
+
+
+    // else if (typeof totalBalance == 'number' && typeof totalExpenses == 'number') {
+    //     previousExpenses.innerText = totalExpenses;
+    //     previousBalance.innerText = totalBalance;
+    // }
+
+
+    // else {
+
+    // }
+
+
 });
+
+
 
 document.getElementById('save-btn').addEventListener('click', function () {
     // previous codes 
-    const incomeTotal = getInputFromField('incomeField');
-    const foodTotal = getInputFromField('foodField')
-    const rentTotal = getInputFromField('rentField')
-    const clothesTotal = getInputFromField('clothesField')
+    const incomeText = getInputFromField('incomeField');
+    const incomeTotal = parseFloat(incomeText);
+    // Expenses Items 
+    const foodText = getInputFromField('foodField');
+    const foodTotal = parseFloat(foodText);
+    const rentText = getInputFromField('rentField');
+    const rentTotal = parseFloat(rentText);
+    const clothesText = getInputFromField('clothesField');
+    const clothesTotal = parseFloat(clothesText);
+    // Expenses
+    // const previousExpensesValue = putInputToResult('myExpenses');
+    // let previousExpensesText = previousExpenses.innerText;
+    // const previousExpensesValue = parseFloat(previousExpensesText);
+    // const newExpenses = foodTotal + rentTotal + clothesTotal;
+    // const totalExpenses = newExpenses + previousExpensesValue;
+    // const totalExpenses = previousExpensesValue;
+
+    // Old 
     const totalExpenses = foodTotal + rentTotal + clothesTotal;
+    // console.log(totalExpenses)
     const totalBalance = incomeTotal - totalExpenses;
     // new codes 
-    const savePercentage = getInputFromField('saveField');
+    // Saving Part Start 
+    const savePercentageText = getInputFromField('saveField');
+    const savePercentage = parseFloat(savePercentageText);
     const mySave = putInputToResult('mySave');
-    const totalSave = incomeTotal - ((100 - savePercentage) * 100);
-    mySave.innerText = totalSave;
+    const totalSave = (savePercentage / 100) * incomeTotal;
+
+    // Saving Part End 
     const remainingBalance = putInputToResult('remainingBalance');
     const totalRemainingBalance = totalBalance - totalSave;
-    remainingBalance.innerText = totalRemainingBalance;
+
+    if (totalRemainingBalance > 0) {
+        mySave.innerText = totalSave;
+        remainingBalance.innerText = totalRemainingBalance;
+    } if (totalRemainingBalance <= 0) {
+        alert('Save Little More')
+    }
+    if (savePercentageText == "") {
+        alert('Enter Your Saving');
+    }
+    if (_.isString(savePercentageText)) {
+        alert('Enter Number')
+    }
+
 });
